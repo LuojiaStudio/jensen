@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>新闻中心-武汉大学学生会</title>
     <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/Director/1.2.8/director.min.js"></script>
     <script src="semantic/dist/semantic.min.js"></script>
 </head>
 <body>
@@ -13,7 +15,7 @@
     <div class="header item">
         <img class="ui medium image" src="img/logo.png">
     </div>
-    <a class="item">投稿</a>
+    <a class="item" id="contribute-btn">投稿</a>
     <a class="item">登录</a>
     <a class="item">关于我们</a>
 </div>
@@ -21,7 +23,7 @@
 
 <div class="search-wrapper">
     <div class="ui action big input search-item">
-        <input type="text" placeholder="Search..." name="search" id="search-input">
+        <input type="text" placeholder="搜索文章标题" name="search" id="search-input">
         <div class="ui blue button" id="search-btn">搜索</div>
         <div class="ui teal button" id="select-btn">筛选</div>
     </div>
@@ -29,164 +31,14 @@
 
 
 <div class="ui horizontal divider" id="divider">
-    <a class="ui blue tag label">New <i class="close icon"></i></a>
-    <a class="ui blue tag label">Upcoming <i class="close icon"></i></a>
-    <a class="ui blue tag label">Featured <i class="close icon"></i></a>
+    <!--<a class="ui blue tag label">聚焦 <i class="close icon"></i></a>-->
+    <!--<a class="ui blue tag label">计算机学院<i class="close icon"></i></a>-->
+    <!--<a class="ui blue tag label">校园 <i class="close icon"></i></a>-->
 </div>
 
 
 <div class="news-list">
     <div class="ui stackable grid container" id="news-container">
-
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card" id="news1">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">校领导班子深入研究双一流建设</div>-->
-        <!--<div class="meta">-->
-        <!--<a>计算机学院</a>-->
-        <!--</div>-->
-        <!--<div class="description">Matthew is an interior designer living in New York.</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">构建亿级用户位置云服务平台</div>-->
-        <!--<div class="meta">-->
-        <!--<a>城市设计学院</a>-->
-        <!--</div>-->
-        <!--<div class="description">Matthew is an interior designer living in New York.</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">全国大学生机器人大赛我校获一等奖</div>-->
-        <!--<div class="meta">-->
-        <!--<a>Friends</a>-->
-        <!--</div>-->
-        <!--<div class="description">学校召开校领导班子2016年中期务虚会，</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75 </span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">武汉大学多措并举着力破解科技成果转化难题</div>-->
-        <!--<div class="meta">-->
-        <!--<a>Friends</a>-->
-        <!--</div>-->
-        <!--<div class="description">Matthew is an interior designer living in New York.</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">校领导班子深入研究双一流建设</div>-->
-        <!--<div class="meta">-->
-        <!--<a>Friends</a>-->
-        <!--</div>-->
-        <!--<div class="description">Matthew is an interior designer living in New York.</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">构建亿级用户位置云服务平台</div>-->
-        <!--<div class="meta">-->
-        <!--<a>Friends</a>-->
-        <!--</div>-->
-        <!--<div class="description">Matthew is an interior designer living in New York.</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">全国大学生机器人大赛我校获一等奖</div>-->
-        <!--<div class="meta">-->
-        <!--<a>Friends</a>-->
-        <!--</div>-->
-        <!--<div class="description">学校召开校领导班子2016年中期务虚会，</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75 </span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="four wide column">-->
-        <!--<div class="ui link card">-->
-        <!--<div class="image">-->
-        <!--<img src="img/1.jpg">-->
-        <!--</div>-->
-        <!--<div class="content">-->
-        <!--<div class="header">武汉大学多措并举着力破解科技成果转化难题</div>-->
-        <!--<div class="meta">-->
-        <!--<a>Friends</a>-->
-        <!--</div>-->
-        <!--<div class="description">Matthew is an interior designer living in New York.</div>-->
-        <!--</div>-->
-        <!--<div class="extra content">-->
-        <!--<span class="right floated">2016-11-16</span>-->
-        <!--<span>阅读 75</span>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
 
     </div>
 </div>
@@ -231,19 +83,44 @@
         <div class="header">
             选择标签
         </div>
-        <div class="content">
-            <div class="ui checkbox">
-                <input type="checkbox" name="example" value="计算机学院" id="s1">
-                <label>计算机学院</label>
-            </div>
-            <div class="ui checkbox">
-                <input type="checkbox" name="example" id="s2">
-                <label>国际软件学院</label>
-            </div>
-            <div class="ui checkbox">
-                <input type="checkbox" name="example" id="s3">
-                <label>遥感信息工程学院</label>
-            </div>
+        <div class="content" id="select-content">
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="14" id="s0">-->
+                <!--<label>校园</label>-->
+            <!--</div>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="2" id="s1">-->
+                <!--<label>聚焦</label>-->
+            <!--</div>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="3" id="s2">-->
+                <!--<label>评论</label>-->
+            <!--</div>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="3" id="s2">-->
+                <!--<label>人物</label>-->
+            <!--</div>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="3" id="s2">-->
+                <!--<label>特写</label>-->
+            <!--</div>-->
+            <!--<br>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="3" id="s2">-->
+                <!--<label>哲学学院</label>-->
+            <!--</div>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="3" id="s2">-->
+                <!--<label>文学院</label>-->
+            <!--</div>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="3" id="s2">-->
+                <!--<label>外国语言文学学院</label>-->
+            <!--</div>-->
+            <!--<div class="ui checkbox">-->
+                <!--<input type="checkbox" name="example" value="3" id="s2">-->
+                <!--<label>新闻与传播学院</label>-->
+            <!--</div>-->
         </div>
         <div class="actions">
             <div class="ui buttons">
@@ -251,6 +128,20 @@
                 <div class="or"></div>
                 <button class="ui positive button" id="select-submit">确定</button>
             </div>
+        </div>
+    </div>
+
+
+    <div class="ui modal" id="contribute-model">
+        <i class="close icon"></i>
+        <div class="header">
+            投稿
+        </div>
+        <div class="content">
+            投稿邮箱 news@whusu.com.cn
+        </div>
+        <div class="actions">
+            <button class="ui positive button">知道啦</button>
         </div>
     </div>
 

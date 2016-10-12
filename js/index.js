@@ -1,5 +1,15 @@
 
-//事件监听
+//当前页面的标签筛选集
+var tag = [];
+var url_next = '';
+var url_base = 'http://api.whusu.com.cn/article/';
+
+
+//打开投稿modal
+$('#contribute-btn').click(function () {
+    $('#contribute-model').modal('show');
+});
+
 
 
 //打开筛选modal
@@ -10,99 +20,99 @@ $('#select-btn').click(function () {
 //确定筛选条件
 $('#select-submit').click(function () {
 
-    var tag = [];
+    tag = [];
 
-    for( var i = 0; i < 3; i++){
-
-        if($('#s' + i).attr("checked")){
-            tag.push($('#s' + i).val()); 
+    for( var i = 0; i < 40; i++){
+        console.log(i);
+        if($('#s' + i+14 ).is(':checked' )){
+            tag.push($('#s' + i+14).val());
+            console.log(tag);
         }
-
     }
-    
-    var data = {
-        tag:tag
-    };
-
-    $('#news-container').empty();
-
-    getArticleList(data);
+    select(tag);
 });
+
+//TODO:删除标签
+// $('#divider').on('click','.close-tab', function () {
+//
+//     console.log(this);
+// });
+
+
+
+
+
 
 //开始搜索
 $('#search-btn').click(function () {
 
-    var search_data = {
-        title:$('#search-input').val()
-    };
+    var title = $('#search-input').val();
+
+    var url_search = url_base + '?title=' + title;
 
     $('#news-container').empty();
 
-    getArticleList(search_data);
+    getArticleList(url_search);
+    tag = [];
+    addTab(tag);
 
 });
+
+
+//筛选
+function select(tag) {
+    var url_select = '';
+    for( var i = 0; i < tag.length; i++) {
+
+        if(i === 0){
+            url_select += '?category=' + tag[i];
+        }
+        else {
+            url_select += '&category=' + tag[i];
+        }
+    }
+
+    $('#news-container').empty();
+
+    getArticleList(url_base + url_select);
+    addTab(tag);
+    //console.log(tag);
+}
+
+
+//添加分割线标签
+function addTab(tag) {
+    $('#divider').empty();
+    for( var i = 0; i < tag.length; i++) {
+        $('#divider').append("<a class=\"ui blue tag label\" data-name=\"" + tag[i] + "\">" + tag[i] + "</a>")
+    }
+}
 
 
 //页面初始化
 function init() {
     var data = {};
-    getArticleList(data);
+    getArticleList(url_base);
+    getTaginit("http://api.whusu.com.cn/category/");
 }
 
 
 
 //获取文章列表
-function getArticleList(data) {
-
-    // if(tag.length === 0){
-    //     $.get("http://127.0.0.1:8000/article/", function(data){
-    //         console.log(data);
-    //
-    //         for( i = 0; i < 8; i++) {
-    //             $('#news-container').append(
-    //                 "<div class=\"four wide column\">"
-    //                 + "<div class=\"ui link card\" id=\"" + data.results[i].id + "\" onclick='getArticleDetail(" + data.results[i].id + ")'>"
-    //                 + "<div class=\"image\">"
-    //                 + "<img src=\"img/1.jpg\">"
-    //                 + "</div>"
-    //                 + "<div class=\"content\">"
-    //                 + "<div class=\"header\">" + data.results[i].title + "</div>"
-    //                 + "<div class=\"meta\">"
-    //                 + "<a>" + getTag(data.results[i].category) + "</a>"
-    //                 + "</div>"
-    //                 + "<div class=\"description\">" + data.results[i].introduction + "</div>"
-    //                 + "</div>"
-    //                 + "<div class=\"extra content\">"
-    //                 + "<span class=\"right floated\">" + "2016-11-16" + "</span>"
-    //                 + "<span>阅读 " + data.results[i].views + "</span>"
-    //                 + "</div></div></div>"
-    //             )
-    //         }
-    //     })
-    // }
-    // else {
-    //     $.get("http://127.0.0.1:8000/article/", function (data) {
-    //
-    //         for( i = 0; i < 10; i++) {
-    //             if()
-    //         }
-    //     })
-    // }
-
-    url = 'http://127.0.0.1:8000/article/';
+function getArticleList(url) {
 
     $.get(
         url,
-        data,
         function (back_data) {
             console.log(back_data);
+            url_next = back_data.next;
             for( i = 0; i < back_data.results.length; i++) {
-                console.log(i);
+                //console.log(i);
                 $('#news-container').append(
-                    "<div class=\"four wide column\">"
+                    "<div class=\"four wide column news-col\">"
                     + "<div class=\"ui link card\" id=\"" + back_data.results[i].id + "\" onclick='getArticleDetail(" + back_data.results[i].id + ")'>"
                     + "<div class=\"image\">"
-                    + "<img src=\"img/1.jpg\">"
+                    + "<img src=\""+ back_data.results[i].cover +"\">"
                     + "</div>"
                     + "<div class=\"content\">"
                     + "<div class=\"header\">" + back_data.results[i].title + "</div>"
@@ -122,6 +132,42 @@ function getArticleList(data) {
     )
 }
 
+
+//加载更多
+$('#more').click(function () {
+    if (url_next === null) {
+        alert('没有啦');
+    }
+    $.get(
+        url_next,
+        function (back_data) {
+            url_next = back_data.next;
+            console.log(back_data);
+            for( i = 0; i < back_data.results.length; i++) {
+                //console.log(i);
+                $('#news-container').append(
+                    "<div class=\"four wide column\">"
+                    + "<div class=\"ui link card\" id=\"" + back_data.results[i].id + "\" onclick='getArticleDetail(" + back_data.results[i].id + ")'>"
+                    + "<div class=\"image\">"
+                    + "<img src=\""+ back_data.results[i].cover +"\">"
+                    + "</div>"
+                    + "<div class=\"content\">"
+                    + "<div class=\"header\">" + back_data.results[i].title + "</div>"
+                    + "<div class=\"meta\">"
+                    + "<a>" + getTag(back_data.results[i].category) + "</a>"
+                    + "</div>"
+                    + "<div class=\"description\">" + back_data.results[i].introduction + "</div>"
+                    + "</div>"
+                    + "<div class=\"extra content\">"
+                    + "<span class=\"right floated\">" + "2016-11-16" + "</span>"
+                    + "<span>阅读 " + back_data.results[i].views + "</span>"
+                    + "</div></div></div>"
+                )
+            }
+
+        }
+    )
+});
 
 //拼接标签字段
 function getTag(item) {
@@ -143,7 +189,7 @@ var a = [];
 //获取文章详情
 function getArticleDetail(id) {
 
-    var url = "http://127.0.0.1:8000/article/" + id + "/";
+    var url = "http://api.whusu.com.cn/article/" + id + "/";
 
     $.get(url,function (data) {
 
@@ -168,4 +214,77 @@ function getArticleDetail(id) {
 
 }
 
+function getTaginit(url) {
+
+
+    $.get(url,function (data) {
+        console.log(data);
+        for( var i = 0; i < 8;i++) {
+            $('#select-content').append(
+                '<div class="ui checkbox">'
+                + '<input type="checkbox" name="example" value="' + data.results[i].id + '" id="s' + data.results[i].id + '">'
+                + '<label>' + data.results[i].name + ' </label>'
+                + '</div>'
+            );
+            if (i === 7) {
+                $('#select-content').append('<br>');
+            }
+        }
+            if(data.next == null) {
+                return;
+            }
+            else getTaginit(data.next);
+
+    })
+}
+
 init();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
