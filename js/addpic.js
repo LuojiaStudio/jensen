@@ -51,7 +51,7 @@ if(el) {
             console.log(err);
         });
 
-        var path = 'http://whusu.oss-cn-qingdao.aliyuncs.com'+storeAs;
+        var path = 'http://oss.whusu.com.cn/'+storeAs;
 
         $('.path').empty();
         $('.path').append(
