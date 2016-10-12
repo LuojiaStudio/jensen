@@ -22,10 +22,17 @@ $('#select-submit').click(function () {
 
     tag = [];
 
+    var j = 0;
+
     for( var i = 0; i < 40; i++){
-        console.log(i);
-        if($('#s' + i+14 ).is(':checked' )){
-            tag.push($('#s' + i+14).val());
+        //console.log(i);
+        j = i + 14;
+        item = {
+            num:$('#s' + j).val(),
+            name:$('#s' + j).attr('data-name'),
+        }
+        if($('#s' + j ).is(':checked' )){
+            tag.push(item);
             console.log(tag);
         }
     }
@@ -61,14 +68,15 @@ $('#search-btn').click(function () {
 
 //筛选
 function select(tag) {
+
     var url_select = '';
     for( var i = 0; i < tag.length; i++) {
 
         if(i === 0){
-            url_select += '?category=' + tag[i];
+            url_select += '?category=' + tag[i].num;
         }
         else {
-            url_select += '&category=' + tag[i];
+            url_select += '&category=' + tag[i].num;
         }
     }
 
@@ -84,7 +92,7 @@ function select(tag) {
 function addTab(tag) {
     $('#divider').empty();
     for( var i = 0; i < tag.length; i++) {
-        $('#divider').append("<a class=\"ui blue tag label\" data-name=\"" + tag[i] + "\">" + tag[i] + "</a>")
+        $('#divider').append("<a class=\"ui blue tag label\" data-name=\"" + tag[i].num + "\">" + tag[i].name + "</a>")
     }
 }
 
@@ -222,7 +230,7 @@ function getTaginit(url) {
         for( var i = 0; i < 8;i++) {
             $('#select-content').append(
                 '<div class="ui checkbox">'
-                + '<input type="checkbox" name="example" value="' + data.results[i].id + '" id="s' + data.results[i].id + '">'
+                + '<input type="checkbox" name="example" value="' + data.results[i].id + '" id="s' + data.results[i].id + '" data-name="'+ data.results[i].name +'">'
                 + '<label>' + data.results[i].name + ' </label>'
                 + '</div>'
             );
