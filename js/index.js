@@ -130,7 +130,7 @@ function getArticleList(url) {
                     + "<div class=\"description\">" + back_data.results[i].introduction + "</div>"
                     + "</div>"
                     + "<div class=\"extra content\">"
-                    + "<span class=\"right floated\">" + "2016-11-16" + "</span>"
+                    + "<span class=\"right floated\">" + getTime(back_data.results[i].create_time) + "</span>"
                     + "<span>阅读 " + back_data.results[i].views + "</span>"
                     + "</div></div></div>"
                 )
@@ -167,7 +167,7 @@ $('#more').click(function () {
                     + "<div class=\"description\">" + back_data.results[i].introduction + "</div>"
                     + "</div>"
                     + "<div class=\"extra content\">"
-                    + "<span class=\"right floated\">" + "2016-11-16" + "</span>"
+                    + "<span class=\"right floated\">" + getTime(back_data.results[i].create_time) + "</span>"
                     + "<span>阅读 " + back_data.results[i].views + "</span>"
                     + "</div></div></div>"
                 )
@@ -176,6 +176,15 @@ $('#more').click(function () {
         }
     )
 });
+
+
+
+//分割时间
+function getTime(time) {
+    console.log(time);
+    console.log(time.split("T", 1)[0]);
+    return time.split("T", 1)[0]
+}
 
 //拼接标签字段
 function getTag(item) {
@@ -247,6 +256,7 @@ function getTaginit(url) {
 }
 
 init();
+
 
 
 
