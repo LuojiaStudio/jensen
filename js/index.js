@@ -3,6 +3,7 @@
 var tag = [];
 var url_next = '';
 var url_base = 'http://api.whusu.com.cn/article/';
+var user_ip = '';
 
 
 //打开投稿modal
@@ -33,7 +34,7 @@ $('#select-submit').click(function () {
         }
         if($('#s' + j ).is(':checked' )){
             tag.push(item);
-            console.log(tag);
+            //console.log(tag);
         }
     }
     select(tag);
@@ -101,6 +102,7 @@ function addTab(tag) {
 function init() {
     var data = {};
     getArticleList(url_base);
+    getIp();
     getTaginit("http://api.whusu.com.cn/category/");
 }
 
@@ -112,7 +114,7 @@ function getArticleList(url) {
     $.get(
         url,
         function (back_data) {
-            console.log(back_data);
+            //console.log(back_data);
             url_next = back_data.next;
             for( i = 0; i < back_data.results.length; i++) {
                 //console.log(i);
@@ -150,7 +152,7 @@ $('#more').click(function () {
         url_next,
         function (back_data) {
             url_next = back_data.next;
-            console.log(back_data);
+            //console.log(back_data);
             for( i = 0; i < back_data.results.length; i++) {
                 //console.log(i);
                 $('#news-container').append(
@@ -181,8 +183,8 @@ $('#more').click(function () {
 
 //分割时间
 function getTime(time) {
-    console.log(time);
-    console.log(time.split("T", 1)[0]);
+    //console.log(time);
+    //console.log(time.split("T", 1)[0]);
     return time.split("T", 1)[0]
 }
 
@@ -226,7 +228,10 @@ function getArticleDetail(id) {
 
     });
 
+
+
     $('#detail-model').modal('show');
+    addView(id);
 
 
 }
@@ -235,7 +240,7 @@ function getTaginit(url) {
 
 
     $.get(url,function (data) {
-        console.log(data);
+        //console.log(data);
         for( var i = 0; i < 8;i++) {
             $('#select-content').append(
                 '<div class="ui checkbox">'
@@ -255,7 +260,42 @@ function getTaginit(url) {
     })
 }
 
+//获取当前ip
+function getIp() {
+
+    $.ajax({
+        url : 'http://api.whusu.com.cn/getip/',
+        type : 'GET',
+        async : false
+    }).done(function (data) {
+        console.log(data);
+        user_ip = data.ip;
+    });
+
+    console.log(user_ip);
+
+}
+
+
+//对当前文章进行阅读
+function addView(id) {
+
+    $.ajax({
+        url : 'http://api.whusu.com.cn/view/',
+        type : 'POST',
+        dataType:"json",
+        contentType:"application/json;charset=utf-8",
+        data: JSON.stringify({
+            article: id,
+            view_ip: user_ip
+        })
+    }).done(function (data) {
+        console.log(data);
+    });
+}
+
 init();
+
 
 
 
