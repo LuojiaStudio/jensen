@@ -67,6 +67,15 @@ $('#search-btn').click(function () {
 });
 
 
+//点赞动作
+$('#like-btn').click(function () {
+    id = $('#like-btn').attr('data-id');
+    addLike(id);
+});
+
+
+
+
 //筛选
 function select(tag) {
 
@@ -225,6 +234,7 @@ function getArticleDetail(id) {
         $('#news-photographer').append(data.photographer);
         $('#content').append(data.content);
         $('#likes').append(data.likes);
+        $('#like-btn').attr('data-id', id);
 
     });
 
@@ -288,6 +298,24 @@ function addView(id) {
         data: JSON.stringify({
             article: id,
             view_ip: user_ip
+        })
+    }).done(function (data) {
+        console.log(data);
+    });
+}
+
+
+//点赞
+function addLike(id) {
+
+    $.ajax({
+        url : 'http://api.whusu.com.cn/like/',
+        type : 'POST',
+        dataType:"json",
+        contentType:"application/json;charset=utf-8",
+        data: JSON.stringify({
+            article: id,
+            like_ip: user_ip
         })
     }).done(function (data) {
         console.log(data);
