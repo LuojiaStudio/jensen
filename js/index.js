@@ -316,10 +316,17 @@ function addLike(id) {
         data: JSON.stringify({
             article: id,
             like_ip: user_ip
-        })
-    }).done(function (data) {
-        console.log(data);
-    });
+        }),
+        complete: function (xhr, textStatus) {
+            console.log(xhr.status);
+            if(xhr.status === 201){
+                //alert(parseInt($('#likes').text())+1);
+                new_like_num = parseInt($('#likes').text())+1;
+                $('#likes').empty();
+                $('#likes').append(new_like_num);
+            }
+        }
+    })
 }
 
 init();
