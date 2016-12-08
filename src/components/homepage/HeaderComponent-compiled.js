@@ -36,6 +36,8 @@ var HeaderComponent = function (_React$Component) {
   _createClass(HeaderComponent, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'div',
         { className: 'header-component' },
@@ -56,7 +58,11 @@ var HeaderComponent = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'header-menu-wrapper' },
-          _react2.default.createElement(_bars2.default, null)
+          _react2.default.createElement(_bars2.default, {
+            onClick: function onClick() {
+              return _this2.props.onOpen();
+            }
+          })
         )
       );
     }

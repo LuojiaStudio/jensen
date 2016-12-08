@@ -2,16 +2,23 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
-        <item url="file://$PROJECT_DIR$/src/components/public/SideComponent-compiled.js" />
-        <item url="file://$PROJECT_DIR$/src/components/homepage/HeaderComponent-compiled.js" />
-        <item url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/homepage/HomePageComponentTest-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/canvasparticles-compiled.js" />
-        <item url="file://$PROJECT_DIR$/test/components/homepage/HeaderComponentTest-compiled.js" />
-        <item url="file://$PROJECT_DIR$/test/components/public/SideComponentTest-compiled.js" />
-        <item url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/dist/assets/app-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/newspage/NewsContentComponent-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/Main-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/newspage/NewsContentComponentTest-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/homepage/CenterlogoComponent-compiled.js" />
         <item url="file://$PROJECT_DIR$/test/components/homepage/CenterlogoComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/newspage/NewspageComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/newspage/NewspageComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/public/SideComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/homepage/HeaderComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/public/SideComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/homepage/HeaderComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/homepage/HomePageComponent-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -21,16 +28,23 @@
       <root url="file://$PROJECT_DIR$/test/components/pulic/SideComponentTest-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/pulic/SideComponent-compiled.js" />
       <root url="file://$PROJECT_DIR$/test/components/pulic/SideComponentTest-compiled.js" />
-      <root url="file://$PROJECT_DIR$/src/components/public/SideComponent-compiled.js" />
-      <root url="file://$PROJECT_DIR$/src/components/homepage/HeaderComponent-compiled.js" />
-      <root url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/homepage/HomePageComponentTest-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/canvasparticles-compiled.js" />
-      <root url="file://$PROJECT_DIR$/test/components/homepage/HeaderComponentTest-compiled.js" />
-      <root url="file://$PROJECT_DIR$/test/components/public/SideComponentTest-compiled.js" />
-      <root url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/dist/assets/app-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/newspage/NewsContentComponent-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/Main-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/newspage/NewsContentComponentTest-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/homepage/CenterlogoComponent-compiled.js" />
       <root url="file://$PROJECT_DIR$/test/components/homepage/CenterlogoComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/newspage/NewspageComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/newspage/NewspageComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/public/SideComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/homepage/HeaderComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/public/SideComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/homepage/HeaderComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/homepage/HomePageComponent-compiled.js" />
     </CLASSES>
     <SOURCES />
   </library>

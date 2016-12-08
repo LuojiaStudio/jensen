@@ -13,12 +13,16 @@ class SideComponent extends React.Component {
   }
 
   render() {
+    let side_class = 'side-close';
+    if(this.props.open === true) side_class = 'side-open';
     return (
-      <div className="side-component">
+      <div className={side_class}>
         <div className="side-tool-wrapper">
           <span>菜单</span>
           <span>
-            <FaClose/>
+            <FaClose
+              onClick={() => this.props.onClose()}
+            />
           </span>
         </div>
         <ul className="side-list">

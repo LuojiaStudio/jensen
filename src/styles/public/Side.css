@@ -1,3 +1,19 @@
+@keyframes slidein {
+  from{
+    transform: translate(100%);
+  }
+  to{
+    transform: translate(0);
+  }
+}
+@keyframes slideout {
+  from{
+    transform: translate(0);
+  }
+  to{
+    transform: translate(100%);
+  }
+}
 .side-component {
   position: fixed;
   width: 0;
@@ -6,7 +22,27 @@
   top:0;
   right: 0;
   color: #fff;
-  animation: slidein 2s ease;
+
+}
+.side-open {
+  position: fixed;
+  height: 100%;
+  background: #111;
+  top:0;
+  right: 0;
+  color: #fff;
+  animation: slidein 1s ease;
+  width: 20%;
+}
+.side-close {
+  animation: slideout 1s ease;
+  position: fixed;
+  height: 100%;
+  background: #111;
+  top:0;
+  right: 0;
+  color: #fff;
+  width: 0;
 }
 .side-tool-wrapper  {
   width: 100%;
@@ -23,6 +59,7 @@
 .side-tool-wrapper span:last-child {
   float: right;
   font-size: 28px;
+  cursor: pointer;
 }
 .side-list li {
   font-size: 18px;

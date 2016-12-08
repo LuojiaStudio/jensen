@@ -43,9 +43,13 @@ var SideComponent = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var side_class = 'side-close';
+      if (this.props.open === true) side_class = 'side-open';
       return _react2.default.createElement(
         'div',
-        { className: 'side-component' },
+        { className: side_class },
         _react2.default.createElement(
           'div',
           { className: 'side-tool-wrapper' },
@@ -57,7 +61,11 @@ var SideComponent = function (_React$Component) {
           _react2.default.createElement(
             'span',
             null,
-            _react2.default.createElement(_close2.default, null)
+            _react2.default.createElement(_close2.default, {
+              onClick: function onClick() {
+                return _this2.props.onClose();
+              }
+            })
           )
         ),
         _react2.default.createElement(

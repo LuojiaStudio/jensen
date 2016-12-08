@@ -10,21 +10,13 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _FooterComponent = require('./public/FooterComponent');
+var _HomePageComponent = require('./homepage/HomePageComponent');
 
-var _FooterComponent2 = _interopRequireDefault(_FooterComponent);
+var _HomePageComponent2 = _interopRequireDefault(_HomePageComponent);
 
-var _CenterlogoComponent = require('./homepage/CenterlogoComponent');
+var _NewspageComponent = require('./newspage/NewspageComponent');
 
-var _CenterlogoComponent2 = _interopRequireDefault(_CenterlogoComponent);
-
-var _HeaderComponent = require('./homepage/HeaderComponent');
-
-var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
-
-var _SideComponent = require('./public/SideComponent');
-
-var _SideComponent2 = _interopRequireDefault(_SideComponent);
+var _NewspageComponent2 = _interopRequireDefault(_NewspageComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47,15 +39,15 @@ var AppComponent = function (_React$Component) {
   }
 
   _createClass(AppComponent, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {}
+  }, {
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
         { className: 'index' },
-        _react2.default.createElement(_HeaderComponent2.default, null),
-        _react2.default.createElement(_CenterlogoComponent2.default, null),
-        _react2.default.createElement(_FooterComponent2.default, null),
-        _react2.default.createElement(_SideComponent2.default, { open: false })
+        _react2.default.createElement(_HomePageComponent2.default, null)
       );
     }
   }]);

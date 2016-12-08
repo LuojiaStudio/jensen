@@ -21,7 +21,7 @@ class CenterlogoComponent extends React.Component {
         dist: 3000,//点吸附距离
         e_dist: 20000,//鼠标吸附加速距离
         max_conn: 10//点到点最大连接数
-      }
+      };
       //调用\
       CanvasParticle(config);
     }

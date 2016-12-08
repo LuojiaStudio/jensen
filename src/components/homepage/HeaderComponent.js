@@ -13,7 +13,9 @@ class HeaderComponent extends React.Component {
           <span><strong>WHU</strong>SU</span>
         </div>
         <div className="header-menu-wrapper">
-          <FaBar/>
+          <FaBar
+            onClick={() => this.props.onOpen()}
+          />
         </div>
       </div>
     );
