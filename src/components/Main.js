@@ -5,6 +5,7 @@ import React from 'react';
 import Footer from './public/FooterComponent'
 import CenterLogo from './homepage/CenterlogoComponent'
 import Header from './homepage/HeaderComponent'
+import Side from './public/SideComponent'
 
 class AppComponent extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class AppComponent extends React.Component {
         <Header/>
         <CenterLogo/>
         <Footer/>
+        <Side/>
       </div>
     );
   }
