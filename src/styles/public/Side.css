@@ -1,0 +1,44 @@
+.side-component {
+  position: fixed;
+  width: 0;
+  height: 100%;
+  background: #111;
+  top:0;
+  right: 0;
+  color: #fff;
+  animation: slidein 2s ease;
+}
+.side-tool-wrapper  {
+  width: 100%;
+  height: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.side-tool-wrapper span {
+  font-family: "Noto Sans S Chinese";
+  line-height: 100px;
+  font-size: 22px;
+  font-weight: 300;
+}
+.side-tool-wrapper span:last-child {
+  float: right;
+  font-size: 28px;
+}
+.side-list li {
+  font-size: 18px;
+  width: 80%;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 2px solid #666666;
+}
+.side-list li a{
+  font-family: "Noto Sans S Chinese";
+  font-weight: 100;
+  color: #cccccc;
+  transition: all 0.3s;
+}
+.side-list li a:hover {
+  color: #ffffff;
+  padding-left: 10px;
+  font-weight: 400;
+}

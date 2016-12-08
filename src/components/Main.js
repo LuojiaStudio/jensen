@@ -14,7 +14,7 @@ class AppComponent extends React.Component {
         <Header/>
         <CenterLogo/>
         <Footer/>
-        <Side/>
+        <Side open={false}/>
       </div>
     );
   }
