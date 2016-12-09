@@ -10,13 +10,25 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HomePageComponent = require('./homepage/HomePageComponent');
+var _FooterComponent = require('../public/FooterComponent');
 
-var _HomePageComponent2 = _interopRequireDefault(_HomePageComponent);
+var _FooterComponent2 = _interopRequireDefault(_FooterComponent);
 
-var _NewspageComponent = require('./newspage/NewspageComponent');
+var _CenterlogoComponent = require('../homepage/CenterlogoComponent');
 
-var _NewspageComponent2 = _interopRequireDefault(_NewspageComponent);
+var _CenterlogoComponent2 = _interopRequireDefault(_CenterlogoComponent);
+
+var _HeaderComponent = require('../homepage/HeaderComponent');
+
+var _HeaderComponent2 = _interopRequireDefault(_HeaderComponent);
+
+var _SideComponent = require('../public/SideComponent');
+
+var _SideComponent2 = _interopRequireDefault(_SideComponent);
+
+var _NewsContentComponent = require('./NewsContentComponent');
+
+var _NewsContentComponent2 = _interopRequireDefault(_NewsContentComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26,38 +38,37 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-require('normalize.css/normalize.css');
-require('styles/App.css');
+require('styles/newspage/Newspage.css');
 
-var AppComponent = function (_React$Component) {
-  _inherits(AppComponent, _React$Component);
+var NewspageComponent = function (_React$Component) {
+  _inherits(NewspageComponent, _React$Component);
 
-  function AppComponent() {
-    _classCallCheck(this, AppComponent);
+  function NewspageComponent() {
+    _classCallCheck(this, NewspageComponent);
 
-    return _possibleConstructorReturn(this, (AppComponent.__proto__ || Object.getPrototypeOf(AppComponent)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (NewspageComponent.__proto__ || Object.getPrototypeOf(NewspageComponent)).apply(this, arguments));
   }
 
-  _createClass(AppComponent, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {}
-  }, {
+  _createClass(NewspageComponent, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'index' },
-        _react2.default.createElement(_HomePageComponent2.default, null),
-        _react2.default.createElement(_NewspageComponent2.default, null)
+        { className: 'newspage-component' },
+        _react2.default.createElement(_NewsContentComponent2.default, null)
       );
     }
   }]);
 
-  return AppComponent;
+  return NewspageComponent;
 }(_react2.default.Component);
 
-AppComponent.defaultProps = {};
+NewspageComponent.displayName = 'NewspageNewspageComponent';
 
-exports.default = AppComponent;
+// Uncomment properties you need
+// NewspageComponent.propTypes = {};
+// NewspageComponent.defaultProps = {};
 
-//# sourceMappingURL=Main-compiled.js.map
+exports.default = NewspageComponent;
+
+//# sourceMappingURL=NewspageComponent-compiled.js.map

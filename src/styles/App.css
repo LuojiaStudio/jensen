@@ -6,6 +6,11 @@
 a, a:visited {
   text-decoration: none;
 }
-body {
+body, html{
   margin:0;
+  height: 100%;
 }
+#app, .index{
+  height: 100%;
+}
+

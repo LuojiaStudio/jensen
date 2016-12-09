@@ -13,6 +13,7 @@ class AppComponent extends React.Component {
     return (
       <div className="index">
         <HomePage/>
+        <NewsPage/>
       </div>
     );
   }
