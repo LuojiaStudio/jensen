@@ -1,4 +1,27 @@
 .newspage-component {
   position: relative;
   width: 100%;
+  padding-top: 100px;
+}
+.page-title::before, .page-title::after{
+  content: '';
+  width: 100px;
+  border-top: .5px solid #000000;
+  position: absolute;
+  top:16px;
+}
+.page-title::before{
+  left: -60px;
+}
+.page-title::after{
+  right: -60px;
+}
+.page-title {
+  font-family: "Noto Sans S Chinese";
+  font-weight: 400;
+  position: relative;
+  text-align: center;
+  font-size: 28px;
+  width: 150px;
+  margin: 0 auto;
 }

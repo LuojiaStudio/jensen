@@ -17,8 +17,9 @@ class NewsContentComponent extends React.Component {
             <li><a href="#">红旗飘抒爱国志，战鼓擂颂时代歌</a></li>
             <li><a href="#">查看更多..</a></li>
           </div>
-          <div className="col">
-            <img className="news-img" src="http://oss.whusu.com.cn//news_pic/1481181442000.jpg"/>
+          <div className="newspage-col">
+            <div className="news-img-wrapper">
+            </div>
           </div>
         </div>
       </div>

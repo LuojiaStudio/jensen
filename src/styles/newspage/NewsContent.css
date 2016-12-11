@@ -3,7 +3,6 @@
   width: 100%;
   margin: 0 auto;
   max-width: 1320px;
-  border-top: 1px solid #bbbbbb;
   padding: 100px 0;
 }
 .newspage-title{
@@ -11,13 +10,14 @@
 }
 .newspage-row {
   width: 80%;
+  height: 300px;
   margin: 0 auto;
 }
 .newspage-col {
   display: inline-block;
   float: left;
   width: 50%;
-  max-height: 100%;
+  height: 100%;
   padding: 0 10px;
 }
 .newspage-col li{
@@ -38,9 +38,9 @@
 .newspage-col li:last-child a{
   color: #3A7BF7;
 }
-.news-img{
-  width: 50%;
-  height: auto;
-  max-width: 100%;
-  display: block;
+.news-img-wrapper {
+  background: red;
+  height: 100%;
+  width: 100%;
+  float: right;
 }

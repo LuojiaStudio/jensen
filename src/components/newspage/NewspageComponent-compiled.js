@@ -55,6 +55,11 @@ var NewspageComponent = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'newspage-component' },
+        _react2.default.createElement(
+          'h2',
+          { className: 'page-title' },
+          '\u65B0\u95FB'
+        ),
         _react2.default.createElement(_NewsContentComponent2.default, null)
       );
     }

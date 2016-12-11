@@ -98,8 +98,8 @@ var NewsContentComponent = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'col' },
-            _react2.default.createElement('img', { className: 'news-img', src: 'http://oss.whusu.com.cn//news_pic/1481181442000.jpg' })
+            { className: 'newspage-col' },
+            _react2.default.createElement('div', { className: 'news-img-wrapper' })
           )
         )
       );

@@ -13,6 +13,7 @@ class NewspageComponent extends React.Component {
   render() {
     return (
       <div className="newspage-component">
+        <h2 className="page-title">新闻</h2>
         <NewsCotent/>
       </div>
     );
