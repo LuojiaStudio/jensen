@@ -12,13 +12,15 @@
         <item url="file://$PROJECT_DIR$/test/components/homepage/CenterlogoComponentTest-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/newspage/NewspageComponent-compiled.js" />
         <item url="file://$PROJECT_DIR$/test/components/newspage/NewspageComponentTest-compiled.js" />
-        <item url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/public/SideComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/homepage/HeaderComponent-compiled.js" />
-        <item url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
         <item url="file://$PROJECT_DIR$/test/components/public/SideComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
         <item url="file://$PROJECT_DIR$/test/components/homepage/HeaderComponentTest-compiled.js" />
+        <item url="file://$PROJECT_DIR$/src/components/video/VideoPageComponent-compiled.js" />
         <item url="file://$PROJECT_DIR$/src/components/homepage/HomePageComponent-compiled.js" />
+        <item url="file://$PROJECT_DIR$/test/components/video/VideoPageComponentTest-compiled.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
@@ -38,13 +40,15 @@
       <root url="file://$PROJECT_DIR$/test/components/homepage/CenterlogoComponentTest-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/newspage/NewspageComponent-compiled.js" />
       <root url="file://$PROJECT_DIR$/test/components/newspage/NewspageComponentTest-compiled.js" />
-      <root url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/public/SideComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/public/FooterComponent-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/homepage/HeaderComponent-compiled.js" />
-      <root url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
       <root url="file://$PROJECT_DIR$/test/components/public/SideComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/public/FooterComponentTest-compiled.js" />
       <root url="file://$PROJECT_DIR$/test/components/homepage/HeaderComponentTest-compiled.js" />
+      <root url="file://$PROJECT_DIR$/src/components/video/VideoPageComponent-compiled.js" />
       <root url="file://$PROJECT_DIR$/src/components/homepage/HomePageComponent-compiled.js" />
+      <root url="file://$PROJECT_DIR$/test/components/video/VideoPageComponentTest-compiled.js" />
     </CLASSES>
     <SOURCES />
   </library>

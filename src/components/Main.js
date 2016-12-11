@@ -4,6 +4,7 @@ require('styles/App.css');
 import React from 'react';
 import HomePage from './homepage/HomePageComponent'
 import NewsPage from './newspage/NewspageComponent'
+import VideoPage from './video/VideoPageComponent'
 
 class AppComponent extends React.Component {
   componentDidMount() {
@@ -14,6 +15,7 @@ class AppComponent extends React.Component {
       <div className="index">
         <HomePage/>
         <NewsPage/>
+        <VideoPage/>
       </div>
     );
   }

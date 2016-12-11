@@ -18,11 +18,15 @@
   float: left;
   width: 50%;
   max-height: 100%;
+  padding: 0 10px;
 }
 .newspage-col li{
   height: 50px;
   line-height: 50px;
   font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .newspage-col li a{
   font-family: "Noto Sans S Chinese";
@@ -37,7 +41,6 @@
 .news-img{
   width: 50%;
   height: auto;
-  max-height: 100%;
   max-width: 100%;
   display: block;
 }

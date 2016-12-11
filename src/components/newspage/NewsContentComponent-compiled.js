@@ -74,7 +74,7 @@ var NewsContentComponent = function (_React$Component) {
               _react2.default.createElement(
                 'a',
                 { href: '#' },
-                '\u201C\u6211\u4EEC\u8BF4\u4EC0\u4E48\u90FD\u961F\u201D\u5230\u5E95\u201C\u5BF9\u4E0D\u961F\u201D\u2014\u2014\u8BB0\u533B\u5B66\u90E8\u9662\u65B0\u8FA9\u8BBA\u8D5B'
+                '\u201C\u6211\u4EEC\u8BF4\u4EC0\u4E48\u90FD\u961F\u201D\u5230\u5E95\u201C\u5BF9\u5E95\u201C\u5BF9\u5E95\u201C\u5BF9\u5E95\u201C\u5BF9\u4E0D\u961F\u201D\u2014\u2014\u8BB0\u533B\u5B66\u90E8\u9662\u65B0\u8FA9\u8BBA\u8D5B'
               )
             ),
             _react2.default.createElement(

@@ -18,6 +18,10 @@ var _NewspageComponent = require('./newspage/NewspageComponent');
 
 var _NewspageComponent2 = _interopRequireDefault(_NewspageComponent);
 
+var _VideoPageComponent = require('./video/VideoPageComponent');
+
+var _VideoPageComponent2 = _interopRequireDefault(_VideoPageComponent);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48,7 +52,8 @@ var AppComponent = function (_React$Component) {
         'div',
         { className: 'index' },
         _react2.default.createElement(_HomePageComponent2.default, null),
-        _react2.default.createElement(_NewspageComponent2.default, null)
+        _react2.default.createElement(_NewspageComponent2.default, null),
+        _react2.default.createElement(_VideoPageComponent2.default, null)
       );
     }
   }]);
